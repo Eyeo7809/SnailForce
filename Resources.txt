@@ -1,0 +1,25 @@
+Resources for overworld tilemaps:
+	https://anokolisa.itch.io/sidescroller-pixelart-sprites-asset-pack-forest-16x16 
+
+Keys:
+	https://karsiori.itch.io/pixel-art-key-pack-animated/download/eyJpZCI6MjQxMjM0MSwiZXhwaXJlcyI6MTczMDEzNjQyM30%3d.2nK8DoXywH6J0fcXfIo%2b97bSPww%3d
+	
+Gems
+	https://tmatdev.itch.io/gems/download/eyJpZCI6MTk4MjA3MiwiZXhwaXJlcyI6MTczMDQwMDQyMn0%3d.DnKkV%2b4yQ%2bNEqBScMxkZcfJVhS8%3d 
+
+Running Sound:
+	Kenney Impact Pack
+
+Jumping Sounds
+	https://jalastram.itch.io/8-bit-jump-sound-effects/download/eyJleHBpcmVzIjoxNzMwNTE2NDY3LCJpZCI6NTY1MjJ9.H18Jt8D0k3sque9TpvgmiMxQ7wE%3d
+	7
+	9
+
+collect sounds
+	https://pixabay.com/sound-effects/search/8-bit%20coin/
+
+NPC
+	https://route1rodent.itch.io/16x16-rpg-character-sprite-sheet/download/eyJleHBpcmVzIjoxNzMwNTM3MzUyLCJpZCI6NjU0ODAxfQ%3d%3d.bY2kMnfqSFLbhmKNGn9VyTn5%2b80%3d
+
+Sword Shit
+	https://soundsbydane.itch.io/8-bit-sound-pack/download/eyJpZCI6MzU2NDAyLCJleHBpcmVzIjoxNzMwNjA3MTk1fQ%3d%3d.X8zk3eNiLdl1mU%2fRfhRqYVeRpUg%3d

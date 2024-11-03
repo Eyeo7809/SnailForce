@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://decchefyuynfv"]
+
+[ext_resource type="Texture2D" uid="uid://cmjg3cisfwy2k" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Snail/walk-Sheet.png" id="1_xn2kv"]
+[ext_resource type="Script" path="res://Legacy-Fantasy - High Forest 2.3/Assets/sprite_2d.gd" id="2_sexs5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vue36"]
+size = Vector2(114, 104.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilwfy"]
+atlas = ExtResource("1_xn2kv")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8dmp"]
+atlas = ExtResource("1_xn2kv")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s76u"]
+atlas = ExtResource("1_xn2kv")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0oul"]
+atlas = ExtResource("1_xn2kv")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6f0tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilwfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8dmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s76u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0oul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s76u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="NPC" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(161, 535.25)
+shape = SubResource("RectangleShape2D_vue36")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(161, 542)
+scale = Vector2(2.46875, 2.90625)
+sprite_frames = SubResource("SpriteFrames_6f0tw")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.845077
+script = ExtResource("2_sexs5")
+
+[node name="CharacterInteract" type="Label" parent="."]
+visible = false
+offset_left = 95.0
+offset_top = 481.0
+offset_right = 229.0
+offset_bottom = 511.0
+text = "Press E to Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lore" type="Label" parent="."]
+visible = false
+offset_left = -57.0
+offset_top = 420.0
+offset_right = 384.0
+offset_bottom = 495.0
+text = "Please help!  The bees have taken over and now
+we have nowhere to go!  You must collect the keys and 
+open the chests, then drop down to the next level! Hurry!"
+horizontal_alignment = 1
+vertical_alignment = 1

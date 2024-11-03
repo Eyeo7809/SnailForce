@@ -1,0 +1,166 @@
+[gd_scene load_steps=9 format=3 uid="uid://bluiy7ssq0lma"]
+
+[ext_resource type="Texture2D" uid="uid://bjf4av235e6ov" path="res://Legacy-Fantasy - High Forest 2.3/Assets/image-removebg-preview (7).png" id="1_png0j"]
+[ext_resource type="Texture2D" uid="uid://q0ogl1gmcrg0" path="res://Legacy-Fantasy - High Forest 2.3/Assets/image-removebg-preview (8).png" id="2_ylua7"]
+[ext_resource type="Texture2D" uid="uid://4sr4oyk5drc5" path="res://Legacy-Fantasy - High Forest 2.3/Assets/gemstone35.png" id="3_tio33"]
+[ext_resource type="AudioStream" uid="uid://woubq3lxdt81" path="res://CharacterSFX/Find_Item.wav" id="4_c81gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt6n8"]
+size = Vector2(111, 100)
+
+[sub_resource type="Animation" id="Animation_d86ul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1069, 581)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FindItem:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_c81gv")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FindItem:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bqbkf"]
+resource_name = "gemAnimation"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1069, 581), Vector2(1069, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.65, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FindItem:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e-05),
+"update": 1,
+"values": [ExtResource("4_c81gv")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FindItem:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wss6j"]
+_data = {
+"RESET": SubResource("Animation_d86ul"),
+"gemAnimation": SubResource("Animation_bqbkf")
+}
+
+[node name="Chest" type="Area2D"]
+
+[node name="ChestCol" type="CollisionShape2D" parent="."]
+position = Vector2(1068, 542)
+shape = SubResource("RectangleShape2D_qt6n8")
+
+[node name="ChestSpriteClosed" type="Sprite2D" parent="."]
+position = Vector2(1069, 580)
+scale = Vector2(0.314815, 0.302817)
+texture = ExtResource("1_png0j")
+
+[node name="ChestSpriteOpen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1070, 580)
+scale = Vector2(0.337378, 0.327922)
+texture = ExtResource("2_ylua7")
+
+[node name="ChestInteract" type="Label" parent="."]
+visible = false
+offset_left = 1001.0
+offset_top = 506.0
+offset_right = 1135.0
+offset_bottom = 536.0
+text = "Press E to Unlock"
+
+[node name="NeedKey" type="Label" parent="."]
+visible = false
+offset_left = 992.0
+offset_top = 506.0
+offset_right = 1146.0
+offset_bottom = 529.0
+text = "Need Key to Unlock"
+
+[node name="Gem" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1069, 581)
+scale = Vector2(1.5625, 1.25)
+texture = ExtResource("3_tio33")
+
+[node name="GemAnimation" type="AnimationPlayer" parent="Gem"]
+libraries = {
+"": SubResource("AnimationLibrary_wss6j")
+}
+
+[node name="FindItem" type="AudioStreamPlayer" parent="Gem"]
+stream = ExtResource("4_c81gv")

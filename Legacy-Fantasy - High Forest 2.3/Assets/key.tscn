@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnsthuviprawi"]
+
+[ext_resource type="SpriteFrames" uid="uid://bs5j3uhmffxbt" path="res://Pixel Art Key Pack - Animated/Key 6/key6Frames.tres" id="1_l7apx"]
+[ext_resource type="AudioStream" uid="uid://da11vws4y68g" path="res://CharacterSFX/retro-coin-3-236679.mp3" id="2_jad3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53xei"]
+size = Vector2(16, 35)
+
+[node name="Key" type="Area2D"]
+position = Vector2(569, 519)
+
+[node name="KeyCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_53xei")
+
+[node name="KeySprt" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.28882e-05, -0.750004)
+scale = Vector2(1, 0.957143)
+sprite_frames = ExtResource("1_l7apx")
+frame_progress = 0.301046
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jad3b")
+volume_db = 9.369
